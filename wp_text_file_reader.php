@@ -39,6 +39,7 @@
 define( 'WP_TFR_VERSION', '0.1.0' );
 define( 'WP_TFR_URL',     plugin_dir_url( __FILE__ ) );
 define( 'WP_TFR_PATH',    dirname( __FILE__ ) . '/' );
+DEFINE( 'WP_TFR_FILE_PATH', '');
 
 /**
  * Default initialization for the plugin:
@@ -76,3 +77,20 @@ add_action( 'init', 'wp_tfr_init' );
 // Wireup filters
 
 // Wireup shortcodes
+
+add_shortcode("readfile", "wp_tfr_handler");
+
+function wp_tfr_shortcode_handler($file) {
+ 
+// Extract the path from shortcode atts
+  $file = shortcode_atts( array( "path" => WP_TFR_FILE_PATH ), $file);
+  $text = '';
+
+// If path is valid extract text from file
+  if('' != $file["path"])
+  	$text = read_file_contents( $file );
+
+// Process any shortcodes as part of the file
+return do_shortcode( $text );
+
+}
