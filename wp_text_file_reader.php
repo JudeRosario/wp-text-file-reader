@@ -94,3 +94,18 @@ function wp_tfr_shortcode_handler($file) {
 return do_shortcode( $text );
 
 }
+
+
+
+function wp_tfr_read_file_contents ($file) {
+
+// Get contents from file
+	$text_file = $_SERVER['DOCUMENT_ROOT'] .$file["path"]; 
+	$contents = file($text_file);
+
+// Process the file input stream
+	$text = implode($contents);
+	$text = nl2br($text);
+
+return $text;
+}
