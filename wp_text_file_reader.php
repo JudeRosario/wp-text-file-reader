@@ -81,15 +81,23 @@ add_action( 'init', 'wp_tfr_init' );
 add_shortcode("readfile", "wp_tfr_handler");
 
 function wp_tfr_shortcode_handler($file) {
+
+  $defaults = array( "path"   => WP_TFR_FILE_PATH 
+  					 "class"  => 'text-file')	
  
 // Extract the path from shortcode atts
-  $file = shortcode_atts( array( "path" => WP_TFR_FILE_PATH ), $file);
+  $file = shortcode_atts( $defaults, $file );
   $text = '';
 
 // If path is valid extract text from file
-  if('' != $file["path"])
+  if('' != $file["path"]):
   	$text = read_file_contents( $file );
-
+  	
+  	if('text-file' != $file["class"])
+  		$text = '<div class="'.$file["class"].'">'.$text.'</div>' ; 
+  	else
+  		$text = '<div class="text-file">'.$text.'</div>' ; 
+  endif;
 // Process any shortcodes as part of the file
 return do_shortcode( $text );
 
