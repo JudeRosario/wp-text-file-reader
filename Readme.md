@@ -1,6 +1,6 @@
 ## WP Text File Reader
 
-![Screenshot](https://img.shields.io/badge/build-passed-1ece30.svg) ![Screenshot](https://img.shields.io/badge/plugin-WPMUDEV-blue.svg) ![Screenshot](https://img.shields.io/badge/license-GNU_GPL_v2-red.svg) ![Screenshot](https://img.shields.io/badge/release-1.0.0-orange.svg)
+![Screenshot](https://img.shields.io/badge/build-passed-1ece30.svg)  ![Screenshot](https://img.shields.io/badge/license-GNU_GPL_v2-red.svg) ![Screenshot](https://img.shields.io/badge/release-1.0.0-orange.svg)
 
  * Contributors:      Jude
  * Donate link:       http://wordpress.org/plugins
