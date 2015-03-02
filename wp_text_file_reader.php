@@ -3,7 +3,7 @@
  * Plugin Name: WP Text File Reader
  * Plugin URI:  http://wordpress.org/plugins
  * Description: Plugin to Read Text files and print them on screen using Shortcodes.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Jude Rosario
  * Author URI:  
  * License:     GPLv2+
